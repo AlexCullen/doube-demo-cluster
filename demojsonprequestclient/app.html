@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="./js/jquery-3.3.1.min.js" rel="stylesheet"></script>
+</head>
+<body>
+这只是个测试页面
+</body>
+<script rel="stylesheet">
+    function getUser(){
+        $.ajax({
+            url: "http://localhost:8080/rest/getUser",
+            dataType: "jsonp",
+            type: "GET",
+            jsonpCallback:"callbackparam",
+            success: function (data) {
+                console.log("**********************")
+                console.log(data)
+            }
+        });
+    }
+    function callbackparam(data) {
+        console.log("===========")
+        console.log(data)
+    }
+
+    function getUserJson(){
+        $.ajax({
+            url: "http://localhost:8080/rest/getUser",
+            dataType: "json",
+            type: "GET",
+            success: function (data) {
+                console.log("**********************")
+                console.log(data)
+            }
+        });
+    }
+    function getUserCors(){
+        $.ajax({
+            url: "http://localhost:8080/rest/getUserCors",
+            dataType: "json",
+            type: "GET",
+            success: function (data) {
+                console.log("**********************")
+                console.log(data)
+            }
+        });
+    }
+
+    function page(){
+        $.ajax({
+            url: "http://localhost:8080/rest/page",
+            dataType: "json",
+            type: "GET",
+            success: function (data) {
+                console.log("**********************")
+                console.log(data)
+            }
+        });
+    }
+</script>
+</html>
